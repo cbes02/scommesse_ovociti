@@ -15,24 +15,11 @@ body {
   min-height: 100vh;
   color: var(--ink);
   font-family: "DM Sans", system-ui, sans-serif;
-  background:
-    radial-gradient(circle at 18% 16%, rgba(255,255,255,.95) 0 1px, transparent 2px),
-    radial-gradient(circle at 76% 23%, rgba(255,255,255,.85) 0 2px, transparent 3px),
-    radial-gradient(circle at 32% 68%, rgba(255,255,255,.7) 0 1px, transparent 2px),
-    linear-gradient(135deg, #ee5da7 0%, #be367d 46%, #f988bc 100%);
-  background-size: 34px 34px, 71px 71px, 45px 45px, auto;
+  background: #f4a6b8;
   overflow-x: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(115deg, transparent 0 18px, rgba(255,255,255,.08) 20px, transparent 23px);
-  mix-blend-mode: screen;
-  animation: shimmer 12s linear infinite;
-}
+body::before { display: none; }
 
 .sparkles { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
 .sparkles::before, .sparkles::after {
@@ -75,12 +62,9 @@ h2 { font-size: clamp(2.6rem, 6vw, 5.3rem); text-transform: uppercase; }
 h1 em, h2 em { color: var(--hot-pink); font-family: "Shrikhand", cursive; font-weight: 400; text-transform: none; letter-spacing: -.02em; text-shadow: 2px 3px 0 #ffd0e6; }
 .hero-question { margin: 26px 0 0; font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 800; }
 
-.uterus-card { position: relative; transform: rotate(2deg); }
-.uterus { width: 100%; max-height: 420px; }
-.orbit { position: absolute; display: grid; place-items: center; width: 58px; aspect-ratio: 1; border: 3px solid var(--ink); border-radius: 50%; background: #fff; font-size: 1.15rem; font-weight: 800; box-shadow: 5px 6px 0 var(--ink); animation: bob 3s ease-in-out infinite; }
-.orbit-one { left: 7%; top: 18%; }
-.orbit-two { right: 2%; top: 40%; animation-delay: -.7s; }
-.orbit-three { left: 36%; bottom: 1%; animation-delay: -1.5s; }
+.hero-photo-wrap { position: relative; justify-self: center; width: min(100%, 430px); transform: rotate(1.5deg); }
+.hero-photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 5px solid white; border-radius: 24px; box-shadow: 9px 11px 0 var(--ink); }
+.photo-sticker { position: absolute; left: -22px; bottom: 25px; padding: 10px 14px; border: 3px solid var(--ink); border-radius: 10px; background: #ffe073; box-shadow: 5px 5px 0 var(--ink); font-size: .78rem; font-weight: 800; transform: rotate(-5deg); }
 
 button { font: inherit; }
 .primary-button, .ghost-button { min-height: 58px; border-radius: 14px; padding: 15px 24px; font-weight: 800; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
@@ -162,9 +146,9 @@ button { font: inherit; }
   h1 { font-size: clamp(2.65rem, 13vw, 4.4rem); }
   h2 { font-size: clamp(2.3rem, 12vw, 4rem); }
   .hero-question { margin-top: 16px; }
-  .uterus-card { width: min(360px, 90%); margin-top: -8px; }
-  .uterus { max-height: 290px; }
-  .orbit { width: 45px; font-size: .9rem; box-shadow: 4px 4px 0 var(--ink); }
+  .hero-photo-wrap { width: min(310px, 86%); margin: 8px auto 12px; }
+  .hero-photo { aspect-ratio: 1 / 1; object-position: center 34%; }
+  .photo-sticker { left: -14px; bottom: 14px; }
   .cards-grid { grid-template-columns: 1fr; }
   .info-card.wide { grid-column: auto; }
   .info-card { min-height: auto; }
